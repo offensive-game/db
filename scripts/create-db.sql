@@ -1,14 +1,14 @@
 \c offensive
 
 CREATE TABLE lands (
-  name VARCHAR(50) PRIMARY KEY
+  name VARCHAR PRIMARY KEY
 );
 
 CREATE TABLE users (
   id BIGSERIAL PRIMARY KEY,
-  username VARCHAR(50) NOT NULL,
-  password VARCHAR(50) NOT NULL,
-  email VARCHAR(50) NOT NULL
+  username VARCHAR NOT NULL,
+  password VARCHAR NOT NULL,
+  email VARCHAR NOT NULL
 );
 
 CREATE TABLE games (
@@ -38,16 +38,16 @@ CREATE TABLE rounds (
 
 CREATE TABLE board (
   id BIGSERIAL PRIMARY KEY,
-  landId VARCHAR(50) REFERENCES lands(name),
+  landId VARCHAR REFERENCES lands(name),
   ownderId BIGINT REFERENCES players(id) ON DELETE CASCADE,
   troops INT
 );
 
 CREATE TABLE cards (
   id BIGSERIAL PRIMARY KEY,
-  type  VARCHAR(25)
+  type  VARCHAR
   gameId BIGINT REFERENCES games(id) ON DELETE CASCADE,
-  landId VARCHAR(50) REFERENCES lands(name)
+  landId VARCHAR REFERENCES lands(name)
 );
 
 
