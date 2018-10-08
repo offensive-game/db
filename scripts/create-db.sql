@@ -13,8 +13,9 @@ CREATE TABLE users (
 
 CREATE TABLE games (
   id BIGSERIAL PRIMARY KEY,
-  players_count SMALLINT,
-  start_time TIMESTAMP DEFAULT now()
+  players_count SMALLINT NOT NULL,
+  name VARCHAR NOT NULL,
+  start_time TIMESTAMP NOT NULL
 );
 
 CREATE TABLE players (
