@@ -22,7 +22,8 @@ CREATE TABLE players (
   id BIGSERIAL PRIMARY KEY,
   userId  BIGINT REFERENCES users(id),
   gameId BIGINT REFERENCES games(id) ON DELETE CASCADE,
-  color VARCHAR NOT NULL
+  color VARCHAR NOT NULL,
+  bot BOOLEAN DEFAULT false
 );
 
 CREATE TABLE sessions (
@@ -46,7 +47,7 @@ CREATE TABLE board (
 
 CREATE TABLE cards (
   id BIGSERIAL PRIMARY KEY,
-  type  VARCHAR
+  type  VARCHAR,
   gameId BIGINT REFERENCES games(id) ON DELETE CASCADE,
   landId VARCHAR REFERENCES lands(name)
 );
