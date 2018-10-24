@@ -35,13 +35,15 @@ CREATE TABLE sessions (
 CREATE TABLE rounds (
   id BIGSERIAL PRIMARY KEY,
   round VARCHAR,
+  phase VARCHAR,
+  deadline TIMESTAMP,
   gameId BIGINT REFERENCES games(id) ON DELETE CASCADE
 );
 
 CREATE TABLE board (
   id BIGSERIAL PRIMARY KEY,
-  landId VARCHAR REFERENCES lands(name),
-  ownderId BIGINT REFERENCES players(id) ON DELETE CASCADE,
+  land VARCHAR REFERENCES lands(name),
+  playerId BIGINT REFERENCES players(id) ON DELETE CASCADE,
   troops INT
 );
 
