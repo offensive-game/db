@@ -23,7 +23,8 @@ CREATE TABLE players (
   userId  BIGINT REFERENCES users(id),
   gameId BIGINT REFERENCES games(id) ON DELETE CASCADE,
   color VARCHAR NOT NULL,
-  bot BOOLEAN DEFAULT false
+  bot BOOLEAN DEFAULT false,
+  units_in_reserve INT DEFAULT 20
 );
 
 CREATE TABLE sessions (
