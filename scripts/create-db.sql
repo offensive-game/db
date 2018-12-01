@@ -56,7 +56,7 @@ CREATE TABLE cards (
 );
 
 
-INSERT INTO lands VALUES ('afghanistan');
+INSERT INTO lands VALUES ('iraq');
 INSERT INTO lands VALUES ('alaska');
 INSERT INTO lands VALUES ('alberta');
 INSERT INTO lands VALUES ('arabia');
